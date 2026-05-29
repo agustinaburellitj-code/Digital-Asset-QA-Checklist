@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Asset QA Checklist</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Digital Production Checklist</p>
+        <h1>Asset QA Review Sheet</h1>
+        <p class="subtitle">Visual QA · File Naming · Export Review · Handoff Notes</p>
+      </div>
+      <div class="brand-card">
+        <span>Review Context</span>
+        <p>Sample skincare campaign assets</p>
+      </div>
+    </header>
+
+    <section class="form-panel">
+      <div class="card">
+        <h2>Asset details</h2>
+        <form id="qaForm">
+          <div class="field-row">
+            <label for="assetName">Asset name</label>
+            <input type="text" id="assetName" name="assetName" placeholder="GLOWLAB_SERUM_STORY_1080x1920_V01" required />
+          </div>
+
+          <div class="field-row">
+            <label for="campaign">Campaign / project</label>
+            <input type="text" id="campaign" name="campaign" placeholder="GlowLab Launch" />
+          </div>
+
+          <div class="field-row grid-2">
+            <div>
+              <label for="platform">Platform</label>
+              <select id="platform" name="platform">
+                <option>Instagram Feed</option>
+                <option>Instagram Story</option>
+                <option>Web Banner</option>
+                <option>Marketplace</option>
+                <option>Email</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label for="format">Format</label>
+              <select id="format" name="format">
+                <option>PNG</option>
+                <option>JPG</option>
+                <option>WebP</option>
+                <option>PDF</option>
+                <option>MP4</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-row grid-2">
+            <div>
+              <label for="size">Size / dimensions</label>
+              <input type="text" id="size" name="size" placeholder="1080x1920" />
+            </div>
+            <div>
+              <label for="version">Version</label>
+              <input type="text" id="version" name="version" placeholder="V01" />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <label for="status">Status</label>
+            <select id="status" name="status">
+              <option>Draft</option>
+              <option>In Review</option>
+              <option>Ready for Delivery</option>
+              <option>Needs Fixes</option>
+            </select>
+          </div>
+
+          <div class="divider"></div>
+
+          <h2>QA checklist</h2>
+          <div class="checklist">
+            <label><input type="checkbox" name="check" value="File name follows convention" /> File name follows convention</label>
+            <label><input type="checkbox" name="check" value="Source asset reviewed" /> Source asset reviewed</label>
+            <label><input type="checkbox" name="check" value="Image crop checked" /> Image crop checked</label>
+            <label><input type="checkbox" name="check" value="Text stays inside safe area" /> Text stays inside safe area</label>
+            <label><input type="checkbox" name="check" value="Format and dimensions checked" /> Format and dimensions checked</label>
+            <label><input type="checkbox" name="check" value="Outdated or duplicated assets avoided" /> Outdated or duplicated assets avoided</label>
+            <label><input type="checkbox" name="check" value="Human review completed" /> Human review completed</label>
+            <label><input type="checkbox" name="check" value="Handoff notes prepared" /> Handoff notes prepared</label>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="field-row">
+            <label for="issues">Issues found</label>
+            <textarea id="issues" name="issues" rows="4" placeholder="No major issues found."></textarea>
+          </div>
+
+          <div class="field-row">
+            <label for="handoffNotes">Final handoff notes</label>
+            <textarea id="handoffNotes" name="handoffNotes" rows="4" placeholder="Ready for review by production lead."></textarea>
+          </div>
+
+          <div class="actions">
+            <button type="button" id="generateBtn">Generate QA Summary</button>
+            <button type="button" id="copyBtn">Copy Summary</button>
+            <button type="button" id="toggleQaNotes" class="secondary">Show QA Notes</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card summary-card">
+        <h2>QA summary</h2>
+        <pre id="summaryOutput">Use the form to generate a delivery-ready QA summary.</pre>
+      </div>
+    </section>
+
+    <section class="info-panel card">
+      <h2>Why this project exists</h2>
+      <p>This review sheet is a small practice tool for checking digital assets before handoff. It focuses on naming, format, visual consistency, source review, and clear delivery notes.</p>
+      <div id="qaNotes" class="qa-notes hidden">
+        <p><strong>QA Mode</strong></p>
+        <ul>
+          <li>Layout responsive checked</li>
+          <li>Form labels are clear</li>
+          <li>Output is copy-ready</li>
+          <li>Human review is required before delivery</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
